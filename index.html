@@ -14,7 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="app.css">
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -24,23 +26,26 @@
     <div class="container header-inner">
       <a href="#" class="logo">⚽ Racheiros</a>
       <nav class="nav" id="nav">
+        <a href="#/mapa">Mapa</a>
+        <a href="#/calendario">Calendário</a>
         <a href="#features">Funcionalidades</a>
         <a href="#como-funciona">Como Funciona</a>
         <a href="#esportes">Esportes</a>
       </nav>
-      <a href="#cta-final" class="btn-primary btn-nav">Cadastre-se</a>
+      <a href="#/novo-racha" class="btn-primary btn-nav">Criar Racha</a>
       <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
     </div>
   </header>
 
   <main>
+    <div id="home-view">
     <!-- Hero -->
     <section class="hero" id="hero">
       <div class="container hero-content">
         <h1>Encontre seu Racha.<br>Jogue com quem ama o esporte.</h1>
         <p class="hero-subtitle">A plataforma que conecta racheiros para jogar futebol, vôlei, basquete e muito mais na sua cidade.</p>
         <div class="hero-buttons">
-          <a href="#features" class="btn-hero-primary">Encontre seu Racha</a>
+          <a href="#/mapa" class="btn-hero-primary">Encontre seu Racha</a>
           <a href="#como-funciona" class="btn-hero-secondary">Saiba Mais</a>
         </div>
         <div class="hero-emojis" aria-hidden="true">
@@ -166,9 +171,11 @@
       <div class="container cta-content">
         <h2>Pronto para encontrar seu racha?</h2>
         <p>Cadastre-se gratuitamente e comece a jogar hoje</p>
-        <a href="#" class="btn-hero-primary">Começar Agora</a>
+        <a href="#/novo-racha" class="btn-hero-primary">Começar Agora</a>
       </div>
     </section>
+    </div><!-- /home-view -->
+    <div id="app-view" style="display:none"></div>
   </main>
 
   <!-- Footer -->
@@ -199,5 +206,8 @@
     </div>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
